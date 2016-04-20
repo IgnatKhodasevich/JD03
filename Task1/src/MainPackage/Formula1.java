@@ -4,11 +4,84 @@ import java.util.*;
 
 
 public class Formula1 {
+	
 	public static void main (String[] args) {
+		int n = 0;
+		System.out.println("Input the number of task(1-21): ");
+		Scanner n1 = new Scanner(System.in);
+		if (n1.hasNextInt()) {
+			n = n1.nextInt();
+		}
+		switch (n){
+		case 1:
+			task1();
+			break;
+		case 2:
+			task2();
+			break;
+		case 3:
+			task3();
+			break;
+		case 4:
+			task4();
+			break;
+		case 5: 
+			System.out.println("The task is not yet done.");
+			break;
+		case 6: 
+			task6();
+			break;
+		case 7: 
+			task7();
+			break;
+		case 8: 
+			task8();
+			break;
+		}
 		
 	}
 	
-	public static void task6 (String[] args) {
+	public static void task8 (){
+		double a;
+		double b;
+		double c;
+		System.out.println("Input a: ");
+		Scanner a1 = new Scanner(System.in);
+		System.out.println("Input b: ");
+		Scanner b1 = new Scanner(System.in);
+		System.out.println("Input c: ");
+		Scanner c1 = new Scanner(System.in);
+		a = a1.nextDouble();
+		b = b1.nextDouble();
+		c = c1.nextDouble();
+		if (a+b > c & a+c>b & b+c>a) {
+			System.out.println("True");
+		}else{
+			System.out.println("False");
+			
+		}
+	}
+	public static void task7 () {
+		double x;
+		double y;
+		System.out.println("Input x: ");
+		Scanner x1 = new Scanner(System.in);
+		System.out.println("Input y: ");
+		Scanner y1 = new Scanner(System.in);
+		x = x1.nextDouble();
+		y = y1.nextDouble();
+		
+		if (x >= 0 & x <= 4 & y >= 0 & y <=4){
+			System.out.println("True");
+		}else if (x >= 0 & x <= 5 & y >= 0 & y <= -5){
+			System.out.println("True");	
+		}else{
+			System.out.println("False");
+		}
+		
+	}
+	
+	public static void task6 () {
 		double x;
 		double y;
 		System.out.println("Input x:");
@@ -27,7 +100,7 @@ public class Formula1 {
 				
 	}
 	
-	public static void task4 (String[] args) {
+	public static void task4 () {
 		long x;
 		long y;
 		long sum;
@@ -53,7 +126,7 @@ public class Formula1 {
 		System.out.println("The quotient is " + quotient);
 		}
 	}
-	public static void task3(String[] args) {
+	public static void task3() {
 		int n;
 		int m = 1;
 		System.out.println("Input your integer number: ");
@@ -74,7 +147,7 @@ public class Formula1 {
 	
 	
 	
-	public static void task2(String[] args) {
+	public static void task2() {
 		double answer1;
 		int x;
 		int y;
@@ -110,7 +183,7 @@ public class Formula1 {
 		}while (x1.hasNextInt() && y1.hasNextInt());
 
 	}	
-	public static void task1 (String[] args) {
+	public static void task1 () {
 		double answer; 
 		int x1;
 		double part1;
