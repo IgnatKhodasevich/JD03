@@ -1,5 +1,6 @@
 package MainPackage;
 
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -37,9 +38,101 @@ public class Formula1 {
 		case 8: 
 			task8();
 			break;
+		case 9: 
+			task9();
+		case 10:
+			task10();
+		case 12:
+			task12();
+		case 15:
+			task15();
 		}
 		
 	}
+	
+	public static void task15(){
+		int year = 0;
+		int month = 0;
+		int daysInMonth;
+		
+		System.out.println("Input year and number of month: ");
+		Scanner year1 = new Scanner(System.in);
+		Scanner month1 = new Scanner(System.in);
+		if (year1.hasNextInt() & month1.hasNextInt()) {
+			year = year1.nextInt();
+			month = month1.nextInt();
+		}
+		/*remainder1 = year % 4;
+		remainder2 = year % 100;
+		remainder3 = year % 400;
+		// February checking 
+		if (remainder1 == 0 & remainder2 == 0 & remainder3 == 0 & month == 2){
+			month = 29;
+			System.out.println(month);
+		}else{
+			remainder4 = month % 2;
+			if (remainder4 == 0){
+				month = 30;
+				System.out.println(month);
+			}
+			
+		}*/
+		
+		LocalDate date = LocalDate.of(year, month, 1);
+		daysInMonth = date.lengthOfMonth();
+		System.out.println(daysInMonth);
+	}
+	public static void task12(){
+		double f;
+		double x;
+		System.out.println("Input x: ");
+		Scanner x1 = new Scanner(System.in);
+		x = x1.nextDouble();
+		if (x <= 3 & x >= 0){
+			f = x * x;
+		}else{
+			f = 4.0;
+		}
+		System.out.println(f);
+	}
+	public static void task10(){
+		long[] a = new long [] {2,-2}; 
+		long[] b = new long [] {6, -1};
+		long aLong = (long) Math.sqrt(Math.abs(a[0])* Math.abs(a[0]) + Math.abs(a[1])* Math.abs(a[1]));
+		long bLong = (long) Math.sqrt(Math.abs(b[0])* Math.abs(b[0]) + Math.abs(b[1])* Math.abs(b[1]));
+		if (aLong < bLong) {
+			System.out.println("A");
+		}else{
+			System.out.println("B");
+		}
+	}
+	public static void task9(){
+		long x;
+		long m;
+		long n; 
+		System.out.println("Input x:");
+		Scanner x1 = new Scanner(System.in);
+		System.out.println("Input m:");
+		Scanner m1 = new Scanner(System.in);
+		System.out.println("Input n:");
+		Scanner n1 = new Scanner(System.in);
+		x = x1.nextLong(); 
+		m = m1.nextLong();
+		n = n1.nextLong(); 
+		if (m<n) {
+			if (x<n & x>m) {
+				System.out.println("True");
+			}else{
+				System.out.println("False");
+
+			}
+		}else{
+			System.out.println("Error"); 
+
+		}
+	}
+		
+	
 	
 	public static void task8 (){
 		double a;
