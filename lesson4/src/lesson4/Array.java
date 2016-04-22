@@ -1,38 +1,25 @@
 package lesson4;
 
-//import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Array {
-
-	public static void main(String[] args) {
-		int [] a = new int[] {4,0,5,3,4,0,5,1,0};
-		int [] b = new int[6];
+	
+	//public static void main(String[] args){
 		
-		
-		for (int i = 0; i < a.length; i++){
-			if (a[i] == 0) {
-				b[i] = a[i];
-				//b = new int[1];
-				
- 			}
+	//}
+	
+	public static void taskArray1(String[] args) {
+	int num[] = {2, 3, 0, 0, 4, 3};
+	int numZ[] = new int[6];
+	int a = 0; 
+	for (int i = 0; i < num.length; i++){
+		if (num[i] == 0){
+			numZ[a] = i;
+			a++;
+			
 			
 		}
-		System.out.println(b);
 	}
-	
-	  /*  private static ArrayList<Integer> getArray(int ... nums) {
-	        ArrayList<Integer> arrNums = new ArrayList<>();
-	 
-	        for (int i = 0; i < nums.length; i++)
-	            if (nums[i] == 0) arrNums.add(i);
-	 
-	        return arrNums;
-	    }
-	 
-	    public static void main (String[] args) {
-	        ArrayList<Integer> arr = getArray(1, 2, 0, 4, 0, 6, 5, 0, 6, 0);
-	 
-	        for (int anArr : arr) System.out.print(anArr + " ");
-	    }*/
+	System.out.println(Arrays.toString(numZ));
 	}
-
+}
