@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.company.by/ParsersDemo/dish" xmlns:tns="http://www.company.by/ParsersDemo/dish">
+<element name="dishes">
+	<complexType>
+		<sequence>
+		<element name="dish" type="tns:DishType" minOccurs="1"
+					maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+</element>
+	<complexType name="DishType">
+		<sequence>
+			<element name="name" type="string"></element>
+			<element name="weight" type="string"></element>
+			<element name="price" type="string"></element>
+		</sequence>
+	</complexType>
+
+</schema>

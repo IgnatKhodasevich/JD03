@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:dishes xmlns:tns="http://www.company.by/ParsersDemo/dish" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.company.by/ParsersDemo/dish Menu.xsd ">
+  <dish>
+    <name>ТАРТАР ИЗ ЛОСОСЯ С ГОЛЛАНДСКИМ СОУСОМ И БАЗИЛИКОВЫМ МАСЛОМ</name>
+    <weight>190 г</weight>
+    <price>420 руб</price>
+  </dish>
+  <dish>
+    <name>ТАРТАР ИЗ СЛАДКОЙ СВЕКЛЫ С КЛУБНИКОЙ И МЯГКИМ СЫРОМ</name>
+    <weight>180 г</weight>
+    <price>320 руб</price>
+  </dish>
+  <dish>
+    <name>ПЕЧЕНАЯ ТЫКВА С ДОМАШНИМ ЙОГУРТОМ, КАШТАНОВЫМ МЕДОМ, КИНЗОЙ И МУССОМ ИЗ МАНГО</name>
+    <weight>180 г</weight>
+    <price>320 руб</price>
+  </dish>
+  <dish>
+    <name>МУСС ИЗ ПЕЧЕНОЙ СВЕКЛЫ И КОКОСОВОГО МОЛОКА</name>
+    <weight>150 г</weight>
+    <price>390 руб</price>
+  </dish>
+</tns:dishes>
