@@ -23,11 +23,11 @@ public class GetFreeRooms implements Command{
 		
 		System.out.println(query);
 		
-		Room r1 = new Room(1, "*");
-		Room r2 = new Room(2, "**");
-		Room r3 = new Room(3, "****");
-		Room r4 = new Room(4, "*");
-		Room r5 = new Room(5, "*");
+		Room r1 = new Room(1, "*", 0, 0, 0, query);
+		Room r2 = new Room(2, "**", 0, 0, 0, query);
+		Room r3 = new Room(3, "****", 0, 0, 0, query);
+		Room r4 = new Room(4, "*", 0, 0, 0, query);
+		Room r5 = new Room(5, "*", 0, 0, 0, query);
 		
 		
 		List<Room> rooms = new ArrayList<>();

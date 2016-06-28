@@ -84,7 +84,7 @@ static class ValidationInRegistration {
 	   if (surname == null || surname.isEmpty()){
 		   throw new ServiceRegisterException("Please, require your surname!");
 	   }
-	   System.out.println("wqe");
+	  
 	   if (password.equals(dublPassword) ){
 		   return true;
 	   }else{

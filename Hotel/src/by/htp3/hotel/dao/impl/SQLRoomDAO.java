@@ -11,7 +11,7 @@ import by.htp3.hotel.dao.impl.pool.ConnectionPoolException;
 public class SQLRoomDAO implements RoomDAO {
 
 	@Override
-	public void addNewRoom(String type, String price_a_day) throws DAOException {
+	public void addNewRoom(int number, String type, int pricePerDay, int floor, int numberOfPlaces, String status) throws DAOException {
 		Connection con = null;
 		PreparedStatement st = null;
 		
@@ -19,15 +19,19 @@ public class SQLRoomDAO implements RoomDAO {
 		try {
 			con = ConnectionPool.getInstance().takeConnection();
 
-			st = con.prepareStatement("INSERT INTO rooms (type, price_a_day) VALUES (?,?)");
-
-			st.setString(1, type);
-			st.setString(2, price_a_day);
+			st = con.prepareStatement("INSERT INTO rooms (number, type, price_per_day, floor, numberOfPlaces, status) VALUES (?,?,?,?,?,?)");
+			
+			st.setInt(1, number);
+			st.setString(2, type);
+			st.setInt(3, pricePerDay);
+			st.setInt(4, floor);
+			st.setInt(5, numberOfPlaces);
+			st.setString(6, status);
 			
 			try {
 				Thread.currentThread().sleep(200);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+			
 				e.printStackTrace();
 			}
 

@@ -15,14 +15,22 @@ public class AddNewRoom implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
+		System.out.println("ok0");
+		int number = Integer.parseInt(request.getParameter("number"));
 		String type = request.getParameter("type");
-		String priceADay = request.getParameter("price_a_day");
+		int pricePerDay = Integer.parseInt(request.getParameter("price_per_day"));
+		int floor = Integer.parseInt(request.getParameter("floor"));
+		int numberOfPlaces = Integer.parseInt(request.getParameter("number_of_places"));
+		String status = request.getParameter("status");
+		
+		
+		
 
 		try {
+			System.out.println("ok1");
 			RoomService roomService = ServiceFactory.getInstance().getRoomService();
-			roomService.addNewRoom(type, priceADay);
-
+			roomService.addNewRoom(number, type, pricePerDay, floor, numberOfPlaces, status);
+			request.setAttribute("rooms", roomService);
 			response.sendRedirect("http://localhost:8080/Hotel/Controller?command=show_free_rooms");
 		} catch (ServiceException e) {
 			e.printStackTrace();

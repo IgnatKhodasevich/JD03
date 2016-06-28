@@ -4,6 +4,6 @@ import by.htp3.hotel.service.exception.ServiceException;
 
 public interface RoomService {
 	
-	void addNewRoom(String type, String price_a_day)  throws ServiceException;
+	void addNewRoom(int number, String type, int pricePerDay, int floor, int numberOfPlaces, String status)  throws ServiceException;
 
 }
