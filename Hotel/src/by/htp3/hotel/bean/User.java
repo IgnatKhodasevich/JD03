@@ -11,6 +11,14 @@ public class User {
 	
 	public User(){}
 
+	public User(String name, String surname, String login, String password) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.login = login;
+		this.password = password;
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import by.htp3.hotel.bean.User;
 import by.htp3.hotel.command.Command;
 import by.htp3.hotel.dao.exception.DAOException;
 import by.htp3.hotel.service.ServiceFactory;
@@ -34,7 +35,7 @@ public class Registration implements Command {
 			UserService userService = ServiceFactory.getInstance().getUserService();
 		
 			userService.addNewUser(login, password, dublPassword, name, surname);
-			request.setAttribute("user", userService);
+			request.setAttribute("user", new User(name, surname, login, password));
 			
 			request.getRequestDispatcher("/WEB-INF/jsp/user.jsp").forward(request, response);
 			
