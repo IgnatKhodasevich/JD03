@@ -44,7 +44,7 @@ public class Registration implements Command {
 			
 		} catch (ServiceRegisterException e) {
 			   request.setAttribute("errorMessage", e.getMessage());
-			   request.getRequestDispatcher("/WEB-INF/jsp/addNewUser.jsp").forward(request, response);
+			   request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 		
 		} catch (ServiceException e) {
 			// TODO Auto-generated catch block

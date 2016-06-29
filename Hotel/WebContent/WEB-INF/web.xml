@@ -19,7 +19,7 @@
     <servlet-name>Controller</servlet-name>
     <url-pattern>/Controller</url-pattern>
   </servlet-mapping>
-  
+ 
   
   <listener>
     <listener-class>by.htp3.hotel.listener.HotelContextCreateListener</listener-class>

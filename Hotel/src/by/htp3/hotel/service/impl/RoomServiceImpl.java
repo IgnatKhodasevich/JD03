@@ -36,7 +36,7 @@ public class RoomServiceImpl implements RoomService {
 
 static class ValidationInAddNewRoom {
 	  static boolean validate(int number, String type, int pricePerDay, int floor, int numberOfPlaces, String status) throws ServiceRegisterException, ServiceRoomException {
-	   
+	   System.out.println("validation");
 		  if (String.valueOf(number) == null ||String.valueOf(number).isEmpty()) {
 		   throw new ServiceRoomException("Field \"number\" can not be empty!"
              + "Please, require number!");

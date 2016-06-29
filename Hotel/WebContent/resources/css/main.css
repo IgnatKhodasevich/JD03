@@ -17,9 +17,3 @@
 }
 
 html { height: 100%; }
-body {
-    margin: 0; /* Убираем отступы */
-    height: 100%; /* Высота страницы */
-    background: url(resources/hotel.jpg); /* Параметры фона */
-    background-size: cover; /* Фон занимает всю доступную площадь */
-   } 
