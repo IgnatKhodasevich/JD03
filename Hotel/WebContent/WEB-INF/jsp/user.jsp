@@ -28,20 +28,20 @@
 	
 	
 	<form action="Controller" method="post">
-		<input type="hidden" name="command" value="show_free_rooms" /> 
-		 <input type="submit" name="sing in" value="show free rooms" />
+		<input type="hidden" name="command" value="get_all_rooms" /> 
+		 <input type="submit" name="get_all_rooms" value="show all rooms" />
 	</form>
 	
 	<br/>
 	
 	<form action="Controller" method="post">
 		<input type="hidden" name="command" value="add_new_room_form" /> 
-		 <input type="submit" name="sing in" value="add new room" />
+		 <input type="submit" name="add_new_room" value="add new room" />
 	</form>
 	<br>
 	<form action="Controller" method="post">
 		<input type="hidden" name="command" value="get_all_users" /> 
-		 <input type="submit" name="sing in" value="show all users" />
+		 <input type="submit" name="show_all_users" value="show all users" />
 	</form>
 	
 

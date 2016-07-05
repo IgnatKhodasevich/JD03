@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import by.htp3.hotel.bean.Room;
 import by.htp3.hotel.command.Command;
 import by.htp3.hotel.command.util.QueryUtil;
+import by.htp3.hotel.service.RoomService;
+import by.htp3.hotel.service.ServiceFactory;
 
-public class GetFreeRooms implements Command{
+public class GetAllRooms implements Command{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -20,26 +22,13 @@ public class GetFreeRooms implements Command{
 		String query = QueryUtil.createHttpQueryString(request);
 		request.getSession(true).setAttribute("prev_query", query);
 		
+		ArrayList<Room> rooms = new ArrayList<>();
+		RoomService roomService  = ServiceFactory.getInstance().getRoomService();
+		rooms = roomService.getAllRooms();
 		
-		System.out.println(query);
+		request.setAttribute("all_rooms", rooms);
 		
-		Room r1 = new Room(1, "*", 0, 0, 0, query);
-		Room r2 = new Room(2, "**", 0, 0, 0, query);
-		Room r3 = new Room(3, "****", 0, 0, 0, query);
-		Room r4 = new Room(4, "*", 0, 0, 0, query);
-		Room r5 = new Room(5, "*", 0, 0, 0, query);
-		
-		
-		List<Room> rooms = new ArrayList<>();
-		rooms.add(r1);
-		rooms.add(r2);
-		rooms.add(r3);
-		rooms.add(r4);
-		rooms.add(r5);
-
-		request.setAttribute("free_rooms", rooms);
-		
-		request.getRequestDispatcher("WEB-INF/jsp/showFreeRooms.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/getAllRooms.jsp").forward(request, response);
 		
 	}
 

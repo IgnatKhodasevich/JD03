@@ -42,7 +42,7 @@ function confirmDelete() {
 
 </script>
 
-<table class="table-hover">
+<table class="table table-bordered table-hover">
     <thead>
     <tr>
         <th>Id</th>

@@ -48,7 +48,7 @@ public class ConnectionPool {
 			connectionCount = MINIMAL_CONNECTION_COUNT;
 		}
 
-		System.out.println("создаемся");
+		
 		freeConnections = new ArrayBlockingQueue<>(connectionCount);
 		givenConnections = new ArrayBlockingQueue<>(connectionCount);
 
@@ -136,7 +136,7 @@ public class ConnectionPool {
 		Connection con = pool.takeConnection();
 
 		if (con != null) {
-			System.out.println("ok");
+			//System.out.println("ok");
 		}
 
 	}

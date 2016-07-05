@@ -2,7 +2,11 @@ package by.htp3.hotel.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import by.htp3.hotel.bean.Room;
 import by.htp3.hotel.dao.RoomDAO;
 import by.htp3.hotel.dao.exception.DAOException;
 import by.htp3.hotel.dao.impl.pool.ConnectionPool;
@@ -47,16 +51,64 @@ public class SQLRoomDAO implements RoomDAO {
 				try {
 					st.close();
 				} catch (SQLException e) {
-					// logging
+					// should add logging
 				}
 			}
 			try {
 				ConnectionPool.getInstance().returnConnection(con);
 			} catch (ConnectionPoolException e) {
-				// loggin error
+				// should add logging
 			}
 
 		}
+	}
+
+	@Override
+	public ArrayList<Room> getAllRooms() throws DAOException {
+		ArrayList<Room> rooms = new ArrayList<Room>();
+		Connection con = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			con = ConnectionPool.getInstance().takeConnection();
+			st = con.prepareStatement("select * from rooms");
+			rs = st.executeQuery();
+			while (rs.next()) {
+				Room room = new Room();
+				room.setNumber(rs.getInt("number"));
+				room.setType(rs.getString("type"));
+				room.setPricePerDay(rs.getInt("price_per_day"));
+				room.setFloor(rs.getInt("floor"));
+				room.setNumberOfPlaces(rs.getInt("numberOfPlaces"));
+				room.setStatus(rs.getString("status"));
+				rooms.add(room);
+			}
+		}catch (SQLException e) {
+			
+			throw new DAOException("Logination sql error..", e);
+		
+		} catch (ConnectionPoolException e) {
+		
+			throw new DAOException("pool exception", e);
+		
+	}
+		finally {
+
+			if (st != null) {
+				try {
+					st.close();
+				} catch (SQLException e) {
+					// should add logging
+				}
+			}
+			try {
+				ConnectionPool.getInstance().returnConnection(con);
+			} catch (ConnectionPoolException e) {
+				// should add logging
+			}
+
+		}
+		return rooms;
 	}
 
 }

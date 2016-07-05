@@ -10,7 +10,9 @@ public class Room {
 	
 	
 	
-	
+	public Room(){
+		
+	}
 	
 	public Room(int number, String type, int pricePerDay, int floor, int numberOfPlaces, String status) {
 		

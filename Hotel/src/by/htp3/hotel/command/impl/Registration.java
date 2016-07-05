@@ -48,7 +48,7 @@ public class Registration implements Command {
 			   request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 		
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} 
 

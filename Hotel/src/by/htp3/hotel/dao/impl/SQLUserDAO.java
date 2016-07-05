@@ -199,7 +199,6 @@ public class SQLUserDAO implements UserDAO {
 		System.out.println("in dao");
 		try {
 			con = ConnectionPool.getInstance().takeConnection();
-			System.out.println("in daopojo");
 			st = con.prepareStatement("delete from users where name=?");
 			st.setString(1, name);
 			st.execute();

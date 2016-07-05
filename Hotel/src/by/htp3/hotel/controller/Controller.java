@@ -31,14 +31,15 @@ public class Controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String commandName = request.getParameter(COMMAND);
-		Command command  = CommandHelper.getInstance().getCommand(commandName);//интерфейсная ссылка
+		Command command  = CommandHelper.getInstance().getCommand(commandName);
 		try {
 			command.execute(request, response);
 		} catch (ServiceRegisterException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
+			
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
