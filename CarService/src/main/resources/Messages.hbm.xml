@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.company.carservice.entities.Messages" table="messages" schema="cars">
+        <id name="messageId" column="message_id"/>
+        <property name="messageText" column="message_text"/>
+        <property name="customerName" column="CustomerName"/>
+        <property name="customerEmail" column="CustomerEmail"/>
+        <property name="customerPhone" column="CustomerPhone"/>
+    </class>
+</hibernate-mapping>

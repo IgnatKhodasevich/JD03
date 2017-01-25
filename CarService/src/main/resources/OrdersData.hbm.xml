@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.company.carservice.entities.OrdersData" table="orders_data" schema="cars">
+        <id name="orderId" column="OrderId"/>
+        <property name="customerName" column="CustomerName"/>
+        <property name="customerPhone" column="CustomerPhone"/>
+        <property name="customerMessage" column="CustomerMessage"/>
+        <property name="sparePart" column="SparePart"/>
+        <property name="sparePartType" column="SparePartType"/>
+        <property name="carBrand" column="CarBrand"/>
+        <property name="carModel" column="CarModel"/>
+        <property name="year" column="Year"/>
+        <property name="capacity" column="Capacity"/>
+        <property name="engineType" column="EngineType"/>
+    </class>
+</hibernate-mapping>

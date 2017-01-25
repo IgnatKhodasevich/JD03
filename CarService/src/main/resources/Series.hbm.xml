@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.company.carservice.entities.Series" table="series" schema="cars">
+        <property name="seriesId" column="series_id"/>
+        <property name="modelId" column="model_id"/>
+        <property name="seriesName" column="series_name"/>
+        <property name="generationId" column="generation_id"/>
+    </class>
+</hibernate-mapping>
